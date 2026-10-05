@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-inter)", "Arial", "sans-serif"],
+        display: ["var(--font-display)", "Arial", "sans-serif"],
+      },
       colors: {
         background: "var(--f1-carbon)",
         foreground: "var(--f1-white)",

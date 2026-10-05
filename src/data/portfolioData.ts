@@ -12,15 +12,15 @@ export const portfolioData = {
   },
 
   contact: {
-    email: "hello@isqq.dev", // DUMMY - Replace with real email
+    email: "TODO: add email", // TODO: Replace with a public contact email.
     phone: "+62 821 9628 7654", // DUMMY - Replace with real phone
     location: "Jakarta, Indonesia", // DUMMY - Replace with real location
   } as Contact,
 
   socialLinks: {
-    github: "https://github.com/isqq", // DUMMY - Replace with real GitHub
-    linkedin: "https://linkedin.com/in/isqq", // DUMMY - Replace with real LinkedIn
-    twitter: "https://twitter.com/isqq", // DUMMY - Replace with real Twitter
+    github: "https://github.com/Muh1shaq",
+    linkedin: "TODO: add LinkedIn URL",
+    twitter: "",
   } as SocialLinks,
 
   // DUMMY - Skills with percentages for telemetry display

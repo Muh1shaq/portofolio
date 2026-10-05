@@ -1,16 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Braces, Github, Home, Linkedin, Mail, Menu, PanelsTopLeft, UserRound, X, History } from "lucide-react";
+import { Github, Linkedin, Mail, Menu, X } from "lucide-react";
 import { portfolioData } from "@/data/portfolioData";
 
 const navItems = [
-  { name: "Home", id: "home", icon: Home },
-  { name: "About", id: "about", icon: UserRound },
-  { name: "Skills", id: "skills", icon: Braces },
-  { name: "Projects", id: "projects", icon: PanelsTopLeft },
-  { name: "Experience", id: "experience", icon: History },
-  { name: "Contact", id: "contact", icon: Mail },
+  { name: "Home", id: "home" },
+  { name: "About", id: "about" },
+  { name: "Skills", id: "skills" },
+  { name: "Projects", id: "projects" },
+  { name: "Experience", id: "experience" },
+  { name: "Contact", id: "contact" },
 ];
 
 export default function Navbar() {
@@ -42,6 +42,17 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsMobileMenuOpen(false);
+    };
+
+    document.addEventListener("keydown", closeOnEscape);
+    return () => document.removeEventListener("keydown", closeOnEscape);
+  }, [isMobileMenuOpen]);
+
   const handleNavClick = (id: string) => {
     setActiveSection(id);
     setIsMobileMenuOpen(false);
@@ -51,13 +62,11 @@ export default function Navbar() {
     <>
       <nav className={`navbar ${isScrolled ? "scrolled" : ""}`} aria-label="Main navigation">
         <a className="navbar-brand" href="#home">
-          <span className="brand-mark">I.</span>
-          <span>ISQQ</span>
+          <span>RACER</span>
         </a>
 
         <div className="navbar-nav">
           {navItems.map((item) => {
-            const Icon = item.icon;
             return (
               <a
                 key={item.id}
@@ -66,8 +75,7 @@ export default function Navbar() {
                 className={`navbar-link${activeSection === item.id ? " is-active" : ""}`}
                 onClick={() => handleNavClick(item.id)}
               >
-                <Icon aria-hidden="true" size={16} strokeWidth={1.8} />
-                <span>{item.name}</span>
+                {item.name}
               </a>
             );
           })}
@@ -77,18 +85,23 @@ export default function Navbar() {
           <a href={portfolioData.socialLinks.github} target="_blank" rel="noreferrer" aria-label="GitHub">
             <Github size={18} />
           </a>
-          <a href={portfolioData.socialLinks.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">
-            <Linkedin size={18} />
-          </a>
-          <a href={`mailto:${portfolioData.contact.email}`} aria-label="Email">
-            <Mail size={18} />
-          </a>
+          {portfolioData.socialLinks.linkedin?.startsWith("https://") && (
+            <a href={portfolioData.socialLinks.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <Linkedin size={18} />
+            </a>
+          )}
+          {!portfolioData.contact.email.startsWith("TODO:") && (
+            <a href={`mailto:${portfolioData.contact.email}`} aria-label="Email">
+              <Mail size={18} />
+            </a>
+          )}
         </div>
 
         <button
           className="mobile-nav-toggle"
           type="button"
           aria-label={isMobileMenuOpen ? "Close navigation" : "Open navigation"}
+          aria-controls="mobile-navigation"
           aria-expanded={isMobileMenuOpen}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
@@ -97,10 +110,15 @@ export default function Navbar() {
       </nav>
 
       {isMobileMenuOpen && (
-        <div className="mobile-menu open" aria-label="Mobile navigation">
-          {navItems.map((item) => {
-            const Icon = item.icon;
-            return (
+        <>
+          <button
+            className="mobile-menu-backdrop"
+            type="button"
+            aria-label="Close navigation"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+          <nav id="mobile-navigation" className="mobile-menu" aria-label="Mobile navigation">
+            {navItems.map((item) => (
               <a
                 key={item.id}
                 href={`#${item.id}`}
@@ -108,12 +126,11 @@ export default function Navbar() {
                 className={`mobile-menu-link${activeSection === item.id ? " is-active" : ""}`}
                 onClick={() => handleNavClick(item.id)}
               >
-                <Icon aria-hidden="true" size={18} strokeWidth={1.8} />
-                <span>{item.name}</span>
+                {item.name}
               </a>
-            );
-          })}
-        </div>
+            ))}
+          </nav>
+        </>
       )}
     </>
   );
