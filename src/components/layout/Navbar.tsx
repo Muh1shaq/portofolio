@@ -9,7 +9,6 @@ const navItems = [
   { name: "About", id: "about" },
   { name: "Skills", id: "skills" },
   { name: "Projects", id: "projects" },
-  { name: "Experience", id: "experience" },
   { name: "Contact", id: "contact" },
 ];
 
@@ -62,7 +61,7 @@ export default function Navbar() {
     <>
       <nav className={`navbar ${isScrolled ? "scrolled" : ""}`} aria-label="Main navigation">
         <a className="navbar-brand" href="#home">
-          <span>RACER</span>
+          <span> </span>
         </a>
 
         <div className="navbar-nav">

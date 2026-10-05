@@ -15,8 +15,15 @@ export interface Project {
 export interface Tech {
   name: string;
   icon: string;
-  category: "languages" | "web" | "backend" | "tools" | "game-dev" | "Frontend" | "Database";
-  level?: number;
+  category:
+    | "Frontend Web"
+    | "Game Dev"
+    | "Backend"
+    | "Backend & Scripting"
+    | "Database"
+    | "UI/UX Design"
+    | "IoT Systems"
+    | "Tools & Systems";
 }
 
 export interface SocialLinks {

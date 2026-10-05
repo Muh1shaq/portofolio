@@ -1,10 +1,9 @@
 import { Project, Tech, SocialLinks, Contact, Experience, Education, Milestone } from "@/types/portfolio";
 
-// DUMMY DATA - Replace with real data
 export const portfolioData = {
   personal: {
-    name: "ISQQ", // DUMMY - Replace with real name
-    role: "Full Stack Developer", // DUMMY - Replace with real role
+    name: "muh ishaq afif ismail", 
+    role: "engineer", 
     tagline: "Building innovative solutions at the intersection of software, networks, and interactive experiences",
     bio: "A passionate Full Stack Developer with expertise in building modern, scalable web applications. I love turning complex problems into simple, beautiful, and intuitive solutions. With a strong foundation in both frontend and backend technologies, I create seamless user experiences while ensuring robust performance and maintainability.", // DUMMY - Replace with real bio
     location: "Jakarta, Indonesia", // DUMMY - Replace with real location
@@ -12,32 +11,79 @@ export const portfolioData = {
   },
 
   contact: {
-    email: "TODO: add email", // TODO: Replace with a public contact email.
-    phone: "+62 821 9628 7654", // DUMMY - Replace with real phone
-    location: "Jakarta, Indonesia", // DUMMY - Replace with real location
+    email: "",
+    phone: "+62-821-9628-7654", 
+    location: "Bandung, Indonesia",
   } as Contact,
 
   socialLinks: {
     github: "https://github.com/Muh1shaq",
     linkedin: "TODO: add LinkedIn URL",
-    twitter: "",
   } as SocialLinks,
 
-  // DUMMY - Skills with percentages for telemetry display
   techStack: [
-    { name: "JavaScript", icon: "⚡", category: "Frontend", level: 95 },
-    { name: "TypeScript", icon: "📘", category: "Frontend", level: 90 },
-    { name: "React", icon: "⚛️", category: "Frontend", level: 92 },
-    { name: "Next.js", icon: "▲", category: "Frontend", level: 88 },
-    { name: "Node.js", icon: "🟢", category: "Backend", level: 85 },
-    { name: "Python", icon: "�", category: "Backend", level: 80 },
-    { name: "PostgreSQL", icon: "🐘", category: "Database", level: 82 },
-    { name: "MongoDB", icon: "🍃", category: "Database", level: 78 },
-    { name: "Tailwind CSS", icon: "🎨", category: "Frontend", level: 95 },
-    { name: "Git", icon: "�", category: "Tools", level: 90 },
+    {
+      name: "HTML5",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+      category: "Frontend Web",
+    },
+    {
+      name: "CSS3",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+      category: "Frontend Web",
+    },
+    {
+      name: "JavaScript",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+      category: "Frontend Web",
+    },
+    {
+      name: "React",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      category: "Frontend Web",
+    },
+    {
+      name: "GDScript",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/godot/godot-original.svg",
+      category: "Game Dev",
+    },
+    {
+      name: "Java",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+      category: "Backend",
+    },
+    {
+      name: "Spring Boot",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
+      category: "Backend",
+    },
+    {
+      name: "Python",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+      category: "Backend & Scripting",
+    },
+    {
+      name: "MySQL",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+      category: "Database",
+    },
+    {
+      name: "Figma",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+      category: "UI/UX Design",
+    },
+    {
+      name: "Arduino",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg",
+      category: "IoT Systems",
+    },
+    {
+      name: "Git",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+      category: "Tools & Systems",
+    },
   ] as Tech[],
 
-  // DUMMY - Projects with placeholder data
   projects: [
     {
       id: "project-1",
