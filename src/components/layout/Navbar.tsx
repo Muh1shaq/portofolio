@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Github, Linkedin, Mail, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { portfolioData } from "@/data/portfolioData";
+import Lantern from "@/components/voxel/Lantern";
 
 const navItems = [
-  { name: "Home", id: "home" },
   { name: "About", id: "about" },
   { name: "Skills", id: "skills" },
   { name: "Projects", id: "projects" },
@@ -33,21 +33,16 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
     if (!isMobileMenuOpen) return;
-
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") setIsMobileMenuOpen(false);
     };
-
     document.addEventListener("keydown", closeOnEscape);
     return () => document.removeEventListener("keydown", closeOnEscape);
   }, [isMobileMenuOpen]);
@@ -58,65 +53,46 @@ export default function Navbar() {
   };
 
   return (
-    <>
-      <nav className={`navbar ${isScrolled ? "scrolled" : ""}`} aria-label="Main navigation">
-        <a className="navbar-brand" href="#home">
-          <span> </span>
+    <header className={`navbar-shell ${isScrolled ? "scrolled" : ""}`}>
+      <nav className="navbar wood bevel" aria-label="Main navigation">
+        <a className="navbar-brand" href="#home" id="nav-brand">
+          <Lantern size={20} />
+          <span>{portfolioData.personal.name}</span>
         </a>
 
         <div className="navbar-nav">
-          {navItems.map((item) => {
-            return (
-              <a
-                key={item.id}
-                href={`#${item.id}`}
-                aria-current={activeSection === item.id ? "location" : undefined}
-                className={`navbar-link${activeSection === item.id ? " is-active" : ""}`}
-                onClick={() => handleNavClick(item.id)}
-              >
-                {item.name}
-              </a>
-            );
-          })}
-        </div>
-
-        <div className="navbar-socials" aria-label="Social links">
-          <a href={portfolioData.socialLinks.github} target="_blank" rel="noreferrer" aria-label="GitHub">
-            <Github size={18} />
-          </a>
-          {portfolioData.socialLinks.linkedin?.startsWith("https://") && (
-            <a href={portfolioData.socialLinks.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">
-              <Linkedin size={18} />
+          {navItems.map((item) => (
+            <a
+              key={item.id}
+              id={`nav-${item.id}`}
+              href={`#${item.id}`}
+              aria-current={activeSection === item.id ? "location" : undefined}
+              className={`navbar-link${activeSection === item.id ? " is-active" : ""}`}
+              onClick={() => handleNavClick(item.id)}
+            >
+              {item.name}
             </a>
-          )}
-          {!portfolioData.contact.email.startsWith("TODO:") && (
-            <a href={`mailto:${portfolioData.contact.email}`} aria-label="Email">
-              <Mail size={18} />
-            </a>
-          )}
+          ))}
+          <a className="btn btn-gold navbar-cta" id="nav-hire" href="#contact">Hire me</a>
         </div>
 
         <button
-          className="mobile-nav-toggle"
+          className="mobile-nav-toggle btn btn-wood"
+          id="nav-toggle"
           type="button"
           aria-label={isMobileMenuOpen ? "Close navigation" : "Open navigation"}
           aria-controls="mobile-navigation"
           aria-expanded={isMobileMenuOpen}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+          {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </nav>
 
       {isMobileMenuOpen && (
         <>
-          <button
-            className="mobile-menu-backdrop"
-            type="button"
-            aria-label="Close navigation"
-            onClick={() => setIsMobileMenuOpen(false)}
-          />
-          <nav id="mobile-navigation" className="mobile-menu" aria-label="Mobile navigation">
+          <button className="mobile-menu-backdrop" type="button" aria-label="Close navigation" onClick={() => setIsMobileMenuOpen(false)} />
+          <nav id="mobile-navigation" className="mobile-menu wood bevel" aria-label="Mobile navigation">
             {navItems.map((item) => (
               <a
                 key={item.id}
@@ -128,9 +104,10 @@ export default function Navbar() {
                 {item.name}
               </a>
             ))}
+            <a className="btn btn-gold" href="#contact" onClick={() => handleNavClick("contact")}>Hire me</a>
           </nav>
         </>
       )}
-    </>
+    </header>
   );
 }

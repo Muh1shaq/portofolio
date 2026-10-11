@@ -1,11 +1,30 @@
 "use client";
 
-import FadeIn from "@/components/animations/FadeIn";
-import { ArrowDown, ArrowUpRight, Download } from "lucide-react";
-import { motion } from "framer-motion";
+import { Download, Play } from "lucide-react";
 import { portfolioData } from "@/data/portfolioData";
+import { useEffect, useState } from "react";
+import SakuraPetals from "@/components/voxel/SakuraPetals";
 
 export default function HeroSection() {
+  const [typedTagline, setTypedTagline] = useState("");
+
+  useEffect(() => {
+    const tagline = portfolioData.personal.tagline;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setTypedTagline(tagline);
+      return;
+    }
+
+    let position = 0;
+    const timer = window.setInterval(() => {
+      position += 1;
+      setTypedTagline(tagline.slice(0, position));
+      if (position >= tagline.length) window.clearInterval(timer);
+    }, 28);
+
+    return () => window.clearInterval(timer);
+  }, []);
+
   const downloadCv = () => {
     const { personal, contact, techStack, experience } = portfolioData;
     const content = [
@@ -31,40 +50,27 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="home" className="hero-section section-wrap">
+    <section id="home" className="hero" aria-label="Intro">
+      <div className="hero-bg" role="img" aria-label="Voxel Japanese garden at golden hour with sakura tree, pagoda, bridge and lake" />
+      <SakuraPetals />
       <div className="hero-inner">
         <div className="hero-copy">
-          <FadeIn delay={0.15}>
-            <p className="eyebrow"><span className="availability-dot" /> Available for select projects</p>
-            <h1>MUH ISHAQ<br /><span>AFIF ISMAIL</span></h1>
-            <p className="hero-subtitle">an Informatics student at Telkom University with a strong background in computer and network engineering.</p>
-            <div className="hero-actions">
-              <button className="button button-primary" onClick={downloadCv}><Download size={17} />Download CV</button>
-              <a className="button button-outline" href="#projects">View Projects<ArrowUpRight size={17} /></a>
-            </div>
-          </FadeIn>
-        </div>
-        <FadeIn delay={0.3} className="hero-art-wrap">
-          <div className="hero-art" aria-label="Decorative code editor illustration">
-            <div className="code-window-top"><span /><span /><span /><small>hello-world.tsx</small></div>
-            <div className="code-lines" aria-hidden="true">
-              <span><i>01</i> <b>const</b> developer = &#123;</span>
-              <span><i>02</i> &nbsp; name: <em>&quot;Ishaq&quot;</em>,</span>
-              <span><i>03</i> &nbsp; focus: <em>&quot;the details&quot;</em>,</span>
-              <span><i>04</i> &nbsp; builds: [</span>
-              <span><i>05</i> &nbsp;&nbsp; <em>&quot;thoughtful UI&quot;</em>,</span>
-              <span><i>06</i> &nbsp;&nbsp; <em>&quot;reliable systems&quot;</em></span>
-              <span><i>07</i> &nbsp; ]</span>
-              <span><i>08</i> &#125;;<b className="code-cursor">|</b></span>
-            </div>
-            <div className="art-stamp">DESIGN<br />&amp; BUILD<span>✳</span></div>
-            <div className="art-caption">A little logic.<br />A lot of care.</div>
+          <h1 className="hero-name">{portfolioData.personal.name}</h1>
+          <p className="hero-role">{portfolioData.personal.role}</p>
+          <div className="hero-tagline wood bevel" aria-label={portfolioData.personal.tagline}>
+            <span aria-hidden="true">{typedTagline}</span>
+            <span className="typing-cursor" aria-hidden="true" />
           </div>
-        </FadeIn>
+          <div className="hero-actions">
+            <a className="btn btn-green" id="hero-start" href="#projects">
+              <Play size={16} fill="currentColor" />Start journey
+            </a>
+            <button className="btn btn-stone" id="hero-download-cv" type="button" onClick={downloadCv}>
+              <Download size={16} />Download CV
+            </button>
+          </div>
+        </div>
       </div>
-      <motion.a href="#about" className="hero-scroll" aria-label="Scroll to About" animate={{ y: [0, 5, 0] }} transition={{ duration: 1.8, repeat: Infinity }}>
-        <ArrowDown size={16} />
-      </motion.a>
     </section>
   );
 }

@@ -4,7 +4,7 @@ export interface Project {
   description: string;
   longDescription?: string;
   image: string;
-  category: "web" | "game" | "networking" | "ai" | "all";
+  category: "web" | "game" | "networking" | "ai" | "all" | "civic-tech";
   technologies: string[];
   features?: string[];
   liveUrl?: string;
@@ -15,6 +15,7 @@ export interface Project {
 export interface Tech {
   name: string;
   icon: string;
+  level: number;
   category:
     | "Frontend Web"
     | "Game Dev"

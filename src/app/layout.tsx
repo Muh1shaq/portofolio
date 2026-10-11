@@ -1,19 +1,24 @@
 import type { Metadata } from "next";
-import { Barlow_Condensed, Inter } from "next/font/google";
+import { Press_Start_2P, VT323 } from "next/font/google";
+import "@/styles/tokens.css";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const displayFont = Barlow_Condensed({
+const pixelFont = Press_Start_2P({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-  variable: "--font-display",
+  weight: "400",
+  variable: "--font-pixel",
+});
+const bodyFont = VT323({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-vt323",
 });
 
 export const metadata: Metadata = {
-  title: "RACER | Full Stack Developer",
-  description: "Portofolio full stack developer dari Telkom University.",
+  title: "Muh Ishaq Afif Ismail | Informatics Student / Software Developer",
+  description: "Portofolio Muh Ishaq Afif Ismail — mahasiswa Informatika Telkom University: web, backend, dan game development.",
 };
 
 export default function RootLayout({
@@ -23,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" className="scroll-smooth">
-      <body className={`${inter.variable} ${displayFont.variable}`}>
+      <body className={`${pixelFont.variable} ${bodyFont.variable}`}>
         <a className="skip-link" href="#main-content">
           Lewati ke konten utama
         </a>

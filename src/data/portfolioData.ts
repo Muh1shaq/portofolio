@@ -2,11 +2,11 @@ import { Project, Tech, SocialLinks, Contact, Experience, Education, Milestone }
 
 export const portfolioData = {
   personal: {
-    name: "muh ishaq afif ismail", 
-    role: "engineer", 
+    name: "muh ishaq afif ismail",
+    role: "Informatics Student / Software Developer",
     tagline: "Building innovative solutions at the intersection of software, networks, and interactive experiences",
-    bio: "A passionate Full Stack Developer with expertise in building modern, scalable web applications. I love turning complex problems into simple, beautiful, and intuitive solutions. With a strong foundation in both frontend and backend technologies, I create seamless user experiences while ensuring robust performance and maintainability.", // DUMMY - Replace with real bio
-    location: "Jakarta, Indonesia", // DUMMY - Replace with real location
+    bio: "Mahasiswa S1 Informatika di Telkom University dengan latar belakang kuat di computer dan network engineering. Berpengalaman dalam pengembangan aplikasi web, game dev, dan sistem backend.",
+    location: "Bandung, Indonesia",
     available: true,
   },
 
@@ -19,190 +19,215 @@ export const portfolioData = {
   socialLinks: {
     github: "https://github.com/Muh1shaq",
     linkedin: "TODO: add LinkedIn URL",
+    twitter: "TODO: add Twitter URL",
   } as SocialLinks,
 
   techStack: [
     {
-      name: "HTML5",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+      name: "Next.js",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
       category: "Frontend Web",
-    },
-    {
-      name: "CSS3",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-      category: "Frontend Web",
-    },
-    {
-      name: "JavaScript",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-      category: "Frontend Web",
+      level: 3,
     },
     {
       name: "React",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
       category: "Frontend Web",
+      level: 3,
     },
     {
-      name: "GDScript",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/godot/godot-original.svg",
-      category: "Game Dev",
+      name: "TypeScript",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+      category: "Frontend Web",
+      level: 3,
     },
     {
-      name: "Java",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
-      category: "Backend",
+      name: "JavaScript",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+      category: "Frontend Web",
+      level: 4,
     },
     {
-      name: "Spring Boot",
+      name: "Tailwind CSS",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+      category: "Frontend Web",
+      level: 3,
+    },
+    {
+      name: "Java Spring Boot",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
       category: "Backend",
+      level: 3,
+    },
+    {
+      name: "Node.js",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+      category: "Backend",
+      level: 3,
     },
     {
       name: "Python",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
       category: "Backend & Scripting",
+      level: 4,
     },
     {
-      name: "MySQL",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+      name: "PostgreSQL",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
       category: "Database",
+      level: 3,
+    },
+    {
+      name: "Supabase",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg",
+      category: "Database",
+      level: 3,
+    },
+    {
+      name: "Godot",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/godot/godot-original.svg",
+      category: "Game Dev",
+      level: 2,
+    },
+    {
+      name: "GDScript",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/godot/godot-original.svg",
+      category: "Game Dev",
+      level: 2,
     },
     {
       name: "Figma",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
       category: "UI/UX Design",
-    },
-    {
-      name: "Arduino",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg",
-      category: "IoT Systems",
+      level: 2,
     },
     {
       name: "Git",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
       category: "Tools & Systems",
+      level: 3,
+    },
+    {
+      name: "Vercel",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg",
+      category: "Tools & Systems",
+      level: 3,
     },
   ] as Tech[],
 
   projects: [
     {
       id: "project-1",
-      title: "E-Commerce Platform", // DUMMY
-      description: "Full-stack e-commerce solution with real-time inventory management", // DUMMY
-      longDescription: "A comprehensive e-commerce platform featuring real-time inventory management, secure payment processing, and an intuitive admin dashboard. Built with scalability and performance in mind.", // DUMMY
-      image: "/assets/images/projects/project-1.png", // DUMMY - Replace with real image
-      category: "web", // DUMMY
-      technologies: ["Next.js", "TypeScript", "PostgreSQL", "Stripe", "Redis"], // DUMMY
+      title: "ResFood",
+      description: "Platform web redistribusi surplus makanan untuk mengurangi food waste dan kerawanan pangan",
+      longDescription: "ResFood adalah platform ekosistem digital berbasis web yang dirancang untuk mengatasi isu rantai pasok makanan, food waste, dan kerawanan pangan global. Platform ini menjembatani dua sisi ekosistem: produsen makanan dapat menyalurkan surplus makanan mereka kepada masyarakat luas, UMKM, dan lembaga sosial secara transparan, aman, dan berkelanjutan.",
+      image: "/voxel/project-resfood.jpg",
+      category: "web",
+      technologies: ["Next.js", "Supabase", "RLS", "TypeScript"],
       features: [
-        "Real-time inventory sync",
-        "Secure payment integration",
-        "Admin dashboard",
-        "Analytics and reporting",
-        "Multi-currency support",
-      ], // DUMMY
-      liveUrl: "https://demo-project-1.vercel.app", // DUMMY - Replace with real URL
-      githubUrl: "https://github.com/isqq/project-1", // DUMMY - Replace with real URL
+        "Modul Manajemen Mitra",
+        "Surplus Food Marketplace",
+        "Smart Redistribution Network",
+        "Core Infrastructure",
+      ],
+      githubUrl: "https://github.com/Muh1shaq/ResFood",
       status: "completed",
     },
     {
       id: "project-2",
-      title: "Task Management App", // DUMMY
-      description: "Collaborative task management with real-time updates", // DUMMY
-      longDescription: "A collaborative task management application featuring real-time updates, team collaboration tools, and advanced project tracking capabilities.", // DUMMY
-      image: "/assets/images/projects/project-2.png", // DUMMY
-      category: "web", // DUMMY
-      technologies: ["React", "Node.js", "MongoDB", "Socket.io"], // DUMMY
+      title: "SimpanAja",
+      description: "Aplikasi manajemen gudang berbasis web untuk mengelola inventaris secara efisien dan real-time",
+      longDescription: "SimpanAja adalah aplikasi manajemen gudang berbasis web yang dirancang untuk membantu bisnis mengelola inventaris secara efisien, akurat, dan real-time. Nama Simpanaja berasal dari kata simpan yang berarti menyimpan barang. Aplikasi ini mencakup fitur inbound dan outbound, pengelolaan inventori, RBAC, dan laporan.",
+      image: "/voxel/project-warehouse.svg",
+      category: "web",
+      technologies: ["TypeScript", "Web"],
       features: [
-        "Real-time collaboration",
-        "Drag-and-drop interface",
-        "Team workspaces",
-        "Progress tracking",
-        "File attachments",
-      ], // DUMMY
-      liveUrl: "https://demo-project-2.vercel.app", // DUMMY
-      githubUrl: "https://github.com/isqq/project-2", // DUMMY
+        "Real-time inventory management",
+        "Inbound/outbound tracking",
+        "RBAC system",
+        "Analytics reports",
+      ],
+      githubUrl: "https://github.com/Muh1shaq/SimpanAja",
       status: "completed",
     },
     {
       id: "project-3",
-      title: "API Gateway Service", // DUMMY
-      description: "Scalable API gateway with rate limiting and authentication", // DUMMY
-      longDescription: "A high-performance API gateway service with advanced rate limiting, JWT authentication, request logging, and analytics dashboard.", // DUMMY
-      image: "/assets/images/projects/project-3.png", // DUMMY
-      category: "backend", // DUMMY
-      technologies: ["Node.js", "Express", "Redis", "PostgreSQL"], // DUMMY
+      title: "Rewind and Regret",
+      description: "Game 2D puzzle platformer dengan konsep asymmetric world-state consequences",
+      longDescription: "Rewind and Regret adalah sebuah game 2D puzzle platformer yang mengusung konsep asymmetric world-state consequences, di mana tindakan pemain di masa lalu secara permanen mengubah rintangan di masa depan.",
+      image: "/voxel/project-time.svg",
+      category: "game",
+      technologies: ["Godot", "GDScript"],
       features: [
-        "Rate limiting",
-        "JWT authentication",
-        "Request logging",
-        "Analytics dashboard",
-        "Load balancing",
-      ], // DUMMY
-      githubUrl: "https://github.com/isqq/project-3", // DUMMY
+        "Asymmetric world-state mechanics",
+        "Time-based puzzle solving",
+        "2D platformer gameplay",
+      ],
+      githubUrl: "https://github.com/Muh1shaq/RewindAndRegret",
       status: "completed",
     },
     {
       id: "project-4",
-      title: "Weather Dashboard", // DUMMY
-      description: "Beautiful weather app with location-based forecasts", // DUMMY
-      longDescription: "A weather dashboard application providing location-based forecasts, historical data visualization, and severe weather alerts.", // DUMMY
-      image: "/assets/images/projects/project-4.png", // DUMMY
-      category: "web", // DUMMY
-      technologies: ["React", "TypeScript", "OpenWeather API"], // DUMMY
+      title: "Worst Enemy",
+      description: "Game dungeon 2D dengan mekanik time-loop dan dual character control",
+      longDescription: "Worst Enemy adalah game dungeon 2D dengan mekanik time-loop di mana dua karakter dikontrol bergantian per run, karakter lain menjalankan rekaman run sebelumnya.",
+      image: "/voxel/project-dungeon.svg",
+      category: "game",
+      technologies: ["Godot", "GDScript"],
       features: [
-        "Location-based forecasts",
-        "Historical data",
-        "Severe weather alerts",
-        "7-day forecast",
-        "Interactive maps",
-      ], // DUMMY
-      liveUrl: "https://demo-project-4.vercel.app", // DUMMY
-      githubUrl: "https://github.com/isqq/project-4", // DUMMY
-      status: "in-progress",
+        "Time-loop mechanics",
+        "Dual character control",
+        "Recording/playback system",
+      ],
+      githubUrl: "https://github.com/Muh1shaq/WorstEnemy",
+      status: "completed",
+    },
+    {
+      id: "project-5",
+      title: "TilikAman",
+      description: "PWA civic-tech untuk koordinasi bantuan mikro hiper-lokal berbasis RT/RW bagi lansia dan warga rentan",
+      longDescription: "TilikAman adalah PWA civic-tech untuk koordinasi bantuan mikro hiper-lokal berbasis RT/RW bagi lansia dan warga rentan. Fitur meliputi check-in harian, eskalasi bertingkat, tiket bantuan, dan dashboard admin RT.",
+      image: "/voxel/project-village.svg",
+      category: "web",
+      technologies: ["PWA", "Supabase Realtime", "Vercel"],
+      features: [
+        "Daily check-in system",
+        "Multi-level escalation",
+        "Help ticket management",
+        "RT admin dashboard",
+      ],
+      status: "completed",
     },
   ] as Project[],
 
-  // DUMMY - Experience with placeholder data
   experience: [
     {
-      company: "Tech Startup Inc.", // DUMMY
-      position: "Senior Full Stack Developer", // DUMMY
-      period: "2022 - Present", // DUMMY
+      company: "Telkom University",
+      position: "S1 Informatika",
+      period: "2021 - Present",
       description: [
-        "Led development of microservices architecture serving 500K+ users", // DUMMY
-        "Implemented CI/CD pipelines reducing deployment time by 60%", // DUMMY
-        "Mentored junior developers and conducted code reviews", // DUMMY
-      ], // DUMMY
+        "Fokus pada Computer and Network Engineering",
+        "Pengembangan aplikasi web dan game development",
+        "Partisipasi dalam kompetisi dan project jam",
+      ],
     },
     {
-      company: "Digital Agency Ltd", // DUMMY
-      position: "Full Stack Developer", // DUMMY
-      period: "2020 - 2022", // DUMMY
+      company: "COMPFEST 18",
+      position: "Game Jam Participant",
+      period: "2024",
       description: [
-        "Developed RESTful APIs for e-commerce platforms", // DUMMY
-        "Optimized database queries improving performance by 40%", // DUMMY
-        "Collaborated with UX team to implement responsive designs", // DUMMY
-      ], // DUMMY
-    },
-    {
-      company: "Web Solutions Co", // DUMMY
-      position: "Junior Developer", // DUMMY
-      period: "2018 - 2020", // DUMMY
-      description: [
-        "Built responsive web applications using React and Node.js", // DUMMY
-        "Maintained and improved existing codebase", // DUMMY
-        "Participated in agile development processes", // DUMMY
-      ], // DUMMY
+        "Persiapan game development dengan Godot",
+        "Collaborative game development experience",
+      ],
     },
   ] as Experience[],
 
-  // DUMMY - Education with placeholder data
   education: [
     {
-      institution: "University of Technology", // DUMMY
-      degree: "Bachelor of Computer Science", // DUMMY
-      period: "2014 - 2018", // DUMMY
-      description: "Specialized in Software Engineering and Web Development", // DUMMY
+      institution: "Telkom University",
+      degree: "S1 Informatika",
+      period: "2021 - Present",
+      description: "Computer and Network Engineering",
     },
   ] as Education[],
 

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 32" shape-rendering="crispEdges">
+  <!-- PLACEHOLDER: voxel dungeon thumbnail (Worst Enemy) -->
+  <rect width="64" height="32" fill="#1f1d2b"/>
+  <g fill="#2e2b3d">
+    <rect x="0" y="0" width="10" height="5"/><rect x="11" y="0" width="10" height="5"/><rect x="22" y="0" width="10" height="5"/><rect x="33" y="0" width="10" height="5"/><rect x="44" y="0" width="10" height="5"/><rect x="55" y="0" width="9" height="5"/>
+    <rect x="5" y="6" width="10" height="5"/><rect x="16" y="6" width="10" height="5"/><rect x="38" y="6" width="10" height="5"/><rect x="49" y="6" width="10" height="5"/>
+    <rect x="0" y="12" width="10" height="5"/><rect x="54" y="12" width="10" height="5"/>
+  </g>
+  <rect x="24" y="8" width="16" height="18" fill="#0e0d16"/>
+  <rect x="8" y="12" width="2" height="5" fill="#6b4a2a"/><rect x="7" y="9" width="4" height="3" fill="#ff9f5a"/><rect x="8" y="8" width="2" height="2" fill="#ffd27a"/>
+  <rect x="54" y="12" width="2" height="5" fill="#6b4a2a"/><rect x="53" y="9" width="4" height="3" fill="#ff9f5a"/><rect x="54" y="8" width="2" height="2" fill="#ffd27a"/>
+  <rect y="24" width="64" height="8" fill="#3a3648"/><rect y="24" width="64" height="1" fill="#57526a"/>
+  <rect x="17" y="15" width="4" height="4" fill="#e2b48a"/><rect x="17" y="14" width="4" height="2" fill="#2a1d17"/>
+  <rect x="17" y="19" width="4" height="4" fill="#3d7bd0"/><rect x="17" y="23" width="1" height="1" fill="#2a1d17"/><rect x="20" y="23" width="1" height="1" fill="#2a1d17"/>
+  <rect x="22" y="18" width="1" height="4" fill="#b4b4be"/>
+  <g opacity=".55"><rect x="43" y="15" width="4" height="4" fill="#a0e7ff"/><rect x="43" y="19" width="4" height="4" fill="#7fd0f0"/><rect x="41" y="18" width="1" height="4" fill="#a0e7ff"/></g>
+</svg>

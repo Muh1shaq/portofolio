@@ -1,0 +1,46 @@
+/* ==========================================================================
+   Voxel Golden-Hour design tokens
+   ========================================================================== */
+:root {
+  /* Palette */
+  --sunset: #ff9f5a;
+  --gold: #ffd27a;
+  --gold-deep: #e8a63a;
+  --gold-dark: #9a5d16;
+  --sakura: #f4a6b8;
+  --twilight: #5b4b8a;
+  --navy: #1c1b33;
+  --leaf: #6cc04a;
+  --leaf-dark: #3f8a2e;
+  --stone: #8a8a95;
+  --stone-light: #b0b0ba;
+  --stone-dark: #55555f;
+  --cream: #fff4e0;
+  --parchment: #f2dcae;
+  --parchment-dark: #c9a66b;
+
+  /* Dark oak wood */
+  --wood: #4a2e1b;
+  --wood-mid: #3b2414;
+  --wood-light: #7a4e2c;
+  --wood-dark: #24140a;
+  --wood-edge: #160c05;
+  --soil: #6b4428;
+
+  /* Typography */
+  --font-heading: var(--font-pixel), "Press Start 2P", "Silkscreen", monospace;
+  --font-body: var(--font-vt323), "VT323", "Space Mono", monospace;
+
+  /* Sizing */
+  --content-width: 1240px;
+  --bevel: 3px;
+  --gap: 18px;
+
+  /* Bevel recipes (light top/left, dark bottom/right) */
+  --bevel-wood: inset var(--bevel) var(--bevel) 0 var(--wood-light), inset calc(var(--bevel) * -1) calc(var(--bevel) * -1) 0 var(--wood-dark);
+  --bevel-gold: inset 3px 3px 0 #fff0b8, inset -3px -3px 0 var(--gold-dark);
+  --bevel-green: inset 3px 3px 0 #a8e57f, inset -3px -3px 0 #2c6a1e;
+  --bevel-stone: inset 3px 3px 0 var(--stone-light), inset -3px -3px 0 var(--stone-dark);
+  --drop: 0 4px 0 rgba(0, 0, 0, 0.45);
+  --glow-gold: 0 0 14px rgba(255, 210, 122, 0.55);
+}

@@ -6,7 +6,7 @@ import ContactSection from "@/components/sections/ContactSection";
 
 export default function Home() {
   return (
-    <div className="relative">
+    <div className="portfolio-page">
       <HeroSection />
       <AboutSection />
       <TechStackSection />
